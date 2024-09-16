@@ -12,15 +12,11 @@ void Player::displayInventory() const
 	{
 		std::cout <<i<< ": " << Player::inventory.at(i)->getName() << std::endl;
 	}
-	for (Item* i: Player::inventory)
-	{
-		
-	}
 }
 
 void Player::useItem(int index)
 {
-	if (index > 0 && index < Player::inventory.size()) {
+	if (index >= 0 && index < Player::inventory.size()) {
 		Player::inventory.at(index)->use();
 	}
 	else {
@@ -33,7 +29,7 @@ void Player::useItem(int index)
 
 void Player::removeItem(int index)
 {
-	if (index > 0 && index < Player::inventory.size()) {
+	if (index >= 0 && index < Player::inventory.size()) {
 		Item* i = Player::inventory.at(index);
 		delete(i);
 		Player::inventory.erase(Player::inventory.begin() + index);

@@ -23,5 +23,5 @@ Potion::Potion() {
 
 void Potion::use()
 {
-	std::cout << "drinking " << Potion::name << " for " << Potion::healingAmount;
+	std::cout << "drinking " << Potion::name << " for " << Potion::healingAmount << endl;
 }
