@@ -1,17 +1,19 @@
 #pragma once
 #include <iostream>
+using namespace std;
+
 class Item
 {
-	private:
-		std::string name;
+	protected:
+		string name;
 		int weight;
 	public:
-		Item(const std::string& name, int weight) : name(name), weight(weight) {}
+		Item(const string& name, int weight);
 		virtual void use() = 0;
 		virtual ~Item();
-		std::string getName();
+		string getName();
 		int getWeight();
-		void setName(std::string& n);
+		void setName(string& n);
 		void setWeight(int w);
 
 };
