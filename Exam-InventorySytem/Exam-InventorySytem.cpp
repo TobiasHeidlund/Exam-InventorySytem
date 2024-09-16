@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "Potion.h"
 
 int main()
 {
