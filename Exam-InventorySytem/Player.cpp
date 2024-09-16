@@ -16,7 +16,12 @@ void Player::displayInventory() const
 
 void Player::useItem(int index)
 {
-	Player::inventory.at(index)->use();
+	if (index >= 0 && index < inventory.size()) { // at(index) kastar ett undantag om indexet är utanför gränserna.
+		//Det kan vara bra att hantera detta undantag eller kontrollera indexet innan åtkomst. (OM)
+		inventory.at(index)->use();
+	} else {
+		std::cerr << "Index out of bounds" << std::endl;
+	}
 }
 
 void Player::removeItem(int index)
