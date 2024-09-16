@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Item.h"
 
-class Potion : Item{
+class Potion : public Item{
 	public:
 		int healingAmount;
 		void use() override;
