@@ -17,7 +17,7 @@ void useItem(Player* p) {
 }
 void addItem(Player* p) {
     cout << "Vilken item vill du läga till?\n"
-        << "(1. Potion, 2. Weapon, 3. Armor)";
+        << "(1. Potion, 2. Weapon, 3. Armor): ";
     int choice;
     cin >> choice;
     switch (choice) 
@@ -75,7 +75,7 @@ int main()
             active = false;
             break;
         default:
-            cout << "Vänligen välj en siffra mellan 1-5";
+            cout << "Vänligen välj en siffra mellan 1-5\n";
             break;
         }
     }

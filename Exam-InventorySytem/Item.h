@@ -7,8 +7,9 @@ class Item
 	protected:
 		std::string name;
 		int weight;
-	public:
 		Item(const string& name, int weight);
+		Item();
+	public:
 		virtual void use() = 0;
 		virtual ~Item();
 		string getName();

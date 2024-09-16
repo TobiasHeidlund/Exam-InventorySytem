@@ -7,10 +7,14 @@ void Player::addItem(Item* item)
 
 void Player::displayInventory() const
 {
-	std::cout << "The inventory contains:\n";
+	std::cout << "Förådet innehåller:\n";
+	for (int i = 0; i < Player::inventory.size(); i++)
+	{
+		std::cout <<i<< ": " << Player::inventory.at(i)->getName() << std::endl;
+	}
 	for (Item* i: Player::inventory)
 	{
-		std::cout << i->getName() << std::endl;
+		
 	}
 }
 

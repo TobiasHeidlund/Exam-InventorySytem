@@ -3,7 +3,11 @@
 Item::~Item()
 {
 }
-
+Item::Item(){}
+Item::Item(const string& name, int weight){
+	this->name = name;
+	this->weight = weight;
+}
 std::string Item::getName()
 {
 	return Item::name;
