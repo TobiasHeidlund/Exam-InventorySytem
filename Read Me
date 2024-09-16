@@ -1,0 +1,77 @@
+Titel: Objektorienterad programmering och minneshantering i C++
+
+Syfte: Denna uppgift syftar till att testa er förståelse för objektorienterad programmering i C++, inklusive användning av klasser, arv, polymorfi och minneshantering på både stacken och heapen.
+
+Uppgift:
+
+Ni ska skapa ett projekt i C++ där ni modellerar ett enkelt inventariesystem för ett rollspel (RPG - Role-Playing Game). Projektet ska innehålla följande:
+
+Klasser och arv:
+
+Skapa en abstrakt basklass som heter Item med virtuella funktioner relevanta för alla föremål.
+Skapa minst tre klasser som ärver från Item, t.ex. Weapon, Armor och Potion, med egna attribut och funktioner.
+Implementera arv korrekt och utnyttja virtuella funktioner, overriding och polymorfism.
+Minneshantering:
+
+Allokera objekt dynamiskt på heapen med hjälp av pekare och new. Spara dessa pekare i en lämplig datastruktur (t.ex. std::vector).
+Skapa också objekt på stacken (automatiska variabler) för att visa skillnaden i minneshantering.
+Se till att frigöra minnet korrekt för alla heap-allokerade objekt med delete.
+Ytterligare funktionalitet:
+
+Implementera en klass Player som innehåller en inventarielista av föremål.
+Tillåt spelaren att lägga till föremål till sitt inventarium.
+Implementera funktioner för att visa detaljer om alla föremål i inventariet.
+Implementera funktionalitet för att använda eller utrusta föremål, och demonstrera polymorf beteende.
+Programstruktur och kvalitet:
+
+Använd god programmeringssed med tydliga och beskrivande namn på variabler och funktioner.
+Hantera minnet korrekt för att undvika minnesläckor.
+Organisera er kod med hjälp av header-filer (.h) och implementeringsfiler (.cpp).
+Instruktioner:
+
+Klasser och arv:
+
+Item (Abstrakt basklass):
+
+Attribut:
+std::string name;
+int weight;
+Rent virtuell funktion:
+virtual void use() = 0;
+Virtuell destruktor för korrekt minneshantering:
+virtual ~Item();
+subklasser:
+
+Weapon (Ärver från Item):
+
+Ytterligare attribut:
+int damage;
+double range;
+Implementerar use() för att simulera en attack.
+Armor (Ärver från Item):
+
+Ytterligare attribut:
+int defense;
+Implementerar use() för att simulera att utrusta rustning.
+Potion (Ärver från Item):
+
+Ytterligare attribut:
+int healingAmount;
+Implementerar use() för att simulera att dricka en dryck.
+Klass Player:
+
+Attribut:
+std::vector<Item*> inventory;
+Funktioner:
+void addItem(Item* item);
+void displayInventory() const;
+void useItem(int index);
+void removeItem(int index);
+Huvudprogram:
+
+Menysystem där användaren kan:
+Lägga till ett föremål till inventariet.
+Visa alla föremål i inventariet.
+Använda ett föremål.
+Ta bort ett föremål från inventariet.
+Avsluta programmet (och frigöra allt dynamiskt allokerat minne).
