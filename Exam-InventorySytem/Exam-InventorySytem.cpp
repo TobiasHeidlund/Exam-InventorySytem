@@ -4,9 +4,18 @@
 #include <iostream>
 #include "Potion.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+#include "Armor.h"
+using namespace std;
+
+int main() {
+
+    Item* helmet = new Armor("Knight Helmet", 3, 20);
+
+    helmet->use();
+
+    delete helmet;
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
