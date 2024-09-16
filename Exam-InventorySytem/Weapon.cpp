@@ -1,10 +1,30 @@
 #include "Weapon.h"
-
 Weapon::Weapon(std::string name, int weight, int damage, double range){
     setName(name);
     setWeight(weight);
     this->damage=damage;
     this->range=range;
+}
+Weapon::Weapon() {
+    cout << "Vad heter vapnet: ";
+    string name;
+    cin >> name;
+    setName(name);
+
+    cout << "Vad väger vapnet: ";
+    int weight;
+    cin >> weight;
+    setWeight(weight);
+    
+    cout << "Hur mycket skada gör vapnet: ";
+    int damage;
+    cin >> damage;
+    this->damage = damage;
+
+    cout << "Hur långt avstånd kan man använda vapnet på: ";
+    int range;
+    cin >> range;
+    this->range = range;
 }
 
 void Weapon::use(){

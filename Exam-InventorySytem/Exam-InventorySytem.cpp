@@ -4,6 +4,8 @@
 #include <iostream>
 #include "Player.h"
 #include "Weapon.h"
+#include "Potion.h"
+#include "Armor.h"
 using namespace std;
 
 //TODO: FIX INDEX OUT OF BOUNDS
@@ -77,7 +79,7 @@ int main()
             break;
         }
     }
-
+    delete(player);
 }
 
 

@@ -9,6 +9,7 @@ class Weapon: public Item{
 
     public:
     Weapon(std::string name, int weight, int damage, double range);
+    Weapon();
     void use( ) override;
     int getDamage();
     void setDamage(int defense);
