@@ -1,19 +1,14 @@
-#ifndef ARMOR_H
-#define ARMOR_H
 
-#include <iostream>
-#include "Item.h"
+#pragma
+#include <Item.h>
 
-class Armor : public Item {
+class Armor : public Item
+{
 private:
-    int defense;
-
+        int defense;
 public:
-    Armor(const std::string& name, int weight, int defense);
-
-    void use() override;
-
-    ~Armor() override;
+        Armor(std::string name, int weight, int defense);
+        void use() override;
+        int getDefense() const;
+        void setDefense(int defense);
 };
-
-#endif
