@@ -25,3 +25,9 @@ void Player::removeItem(int index)
 	delete(i);
 	Player::inventory.erase(Player::inventory.begin() + index);
 }
+Player::~Player() {
+	for (Item* i : Player::inventory) {
+		delete(i);
+	}
+
+}
