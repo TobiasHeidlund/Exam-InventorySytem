@@ -2,7 +2,7 @@
 #include <iostream>
 class Item
 {
-	private:
+	protected:
 		std::string name;
 		int weight;
 	public:
