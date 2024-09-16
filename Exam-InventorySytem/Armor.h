@@ -8,6 +8,7 @@ private:
         int defense;
 public:
         Armor(std::string name, int weight, int defense);
+        Armor();
         void use() override;
         int getDefense() const;
         void setDefense(int defense);
