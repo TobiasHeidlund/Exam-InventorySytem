@@ -6,6 +6,7 @@ class Item
 		std::string name;
 		int weight;
 	public:
+		Item(const std::string& name, int weight) : name(name), weight(weight) {}
 		virtual void use() = 0;
 		virtual ~Item();
 		std::string getName();
