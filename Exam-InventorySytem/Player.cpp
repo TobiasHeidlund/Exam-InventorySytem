@@ -16,15 +16,29 @@ void Player::displayInventory() const
 
 void Player::useItem(int index)
 {
-	Player::inventory.at(index)->use();
+	if (index > 0 && index < Player::inventory.size()) {
+		Player::inventory.at(index)->use();
+	}
+	else {
+		cout << "Platsen används inte" << endl;
+	}
+
+
+	
 }
 
 void Player::removeItem(int index)
 {
-	Item* i = Player::inventory.at(index);
-	delete(i);
-	Player::inventory.erase(Player::inventory.begin() + index);
+	if (index > 0 && index < Player::inventory.size()) {
+		Item* i = Player::inventory.at(index);
+		delete(i);
+		Player::inventory.erase(Player::inventory.begin() + index);
+	}
+	else {
+		cout << "Platsen används inte" << endl;
+	}
 }
+	
 Player::~Player() {
 	for (Item* i : Player::inventory) {
 		delete(i);

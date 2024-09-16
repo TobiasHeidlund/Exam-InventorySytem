@@ -1,3 +1,4 @@
+
 #pragma
 #include <Item.h>
 
@@ -11,4 +12,3 @@ public:
         int getDefense() const;
         void setDefense(int defense);
 };
-
