@@ -26,9 +26,13 @@ void Player::useItem(int index)
 
 void Player::removeItem(int index)
 {
-	Item* i = Player::inventory.at(index);
-	delete(i);
-	Player::inventory.erase(Player::inventory.begin() + index);
+	if (index >= 0 && index < inventory.size()) { // at(index) kastar ett undantag här också (OM)
+		Item* i = inventory.at(index);
+		delete i;
+		inventory.erase(inventory.begin() + index);
+	} else {
+		std::cerr << "Index out of bounds" << std::endl;
+	}
 }
 Player::~Player() {
 	for (Item* i : Player::inventory) {
