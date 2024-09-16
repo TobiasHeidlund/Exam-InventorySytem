@@ -8,9 +8,11 @@ using namespace std;
 
 int main() {
 
-    Armor helmet("Knight Helmet", 3, 20);
+    Item* helmet = new Armor("Knight Helmet", 3, 20);
 
-    helmet.use();
+    helmet->use();
+
+    delete helmet;
 
     return 0;
 }
