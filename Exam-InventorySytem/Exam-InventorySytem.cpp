@@ -3,9 +3,16 @@
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+#include "Armor.h"
+using namespace std;
+
+int main() {
+
+    Armor helmet("Knight Helmet", 3, 20);
+
+    helmet.use();
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
