@@ -10,8 +10,8 @@ class Item
 		virtual ~Item();
 		std::string getName();
 		int getWeight();
-		void setName(std::string);
-		void setWeight(int);
+		void setName(std::string& n);
+		void setWeight(int w);
 
 };
 
