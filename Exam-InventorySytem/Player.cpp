@@ -29,5 +29,5 @@ Player::~Player() {
 	for (Item* i : Player::inventory) {
 		delete(i);
 	}
-
+	inventory.clear(); //det är viktigt att säkerställa att inventory är tomt efter att alla objekt har raderats (OM)
 }
