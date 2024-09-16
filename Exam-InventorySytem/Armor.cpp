@@ -23,7 +23,7 @@ Armor::Armor() {
 }
 
 void Armor::use(){
-    std::cout <<"Armor: "<<getName()<<" with defense"<<defense<<"/n";
+    std::cout <<"Armor: "<<getName()<<" with defense"<<defense<<"\n";
 }
 
 int Armor::getDefense() const{
