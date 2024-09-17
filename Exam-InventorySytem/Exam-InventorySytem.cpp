@@ -10,13 +10,13 @@ using namespace std;
 
 //TODO: FIX INDEX OUT OF BOUNDS
 void useItem(Player* p) {
-    cout << "Vilken plats vill du använda:";
+    cout << "Vilken plats vill du anvï¿½nda:";
     int choice;
     cin >> choice;
     p->useItem(choice);
 }
 void addItem(Player* p) {
-    cout << "Vilken item vill du läga till?\n"
+    cout << "Vilken item vill du lï¿½ga till?\n"
         << "(1. Potion, 2. Weapon, 3. Armor): ";
     int choice;
     cin >> choice;
@@ -32,7 +32,7 @@ void addItem(Player* p) {
             p->addItem(new Armor());
             break;
         default:
-            cout << "Vänligen välj en siffra mellan 1-3";
+            cout << "Vï¿½nligen vï¿½lj en siffra mellan 1-3";
             break;
     }
 
@@ -49,14 +49,17 @@ int main()
 {
     Player* player = new Player;
 
+    shared_ptr<Weapon> excalibur = make_shared<Weapon>("Excalibur", 1, 666, 5);
+
     bool active = true;
     int choice;
     while (active) {
-        cout << "1. Lägga till ett föremål till inventariet.\n"
-            << "2. Visa alla föremål i inventariet.\n"
-            << "3. Använda ett föremål.\n"
-            << "4. Ta bort ett föremål från inventariet.\n"
-            << "5. Avsluta programmet(och frigöra allt dynamiskt allokerat minne).\n";
+        cout << "1. Lï¿½gga till ett fï¿½remï¿½l till inventariet.\n"
+            << "2. Visa alla fï¿½remï¿½l i inventariet.\n"
+            << "3. Anvï¿½nda ett fï¿½remï¿½l.\n"
+            << "4. Ta bort ett fï¿½remï¿½l frï¿½n inventariet.\n"
+            << "5. Avsluta programmet(och frigï¿½ra allt dynamiskt allokerat minne).\n"
+            << "6. AnÃ¤nd Excalibur! \n";
         cin >> choice;
         switch (choice) {
         case 1: 
@@ -74,8 +77,12 @@ int main()
         case 5:
             active = false;
             break;
+        case 6:
+            player->addItem(excalibur.get());  // LÃ¤gger till en pekare till Excalibur i inventariet
+            cout << "Excalibur har lagts till i inventariet!\n";
+            break;
         default:
-            cout << "Vänligen välj en siffra mellan 1-5\n";
+            cout << "Vï¿½nligen vï¿½lj en siffra mellan 1-5\n";
             break;
         }
     }
